@@ -6,22 +6,45 @@ HTMLWidgets.widget({
 
   factory: function(el, width, height) {
 
-    // TODO: define shared variables for this instance
+    var instance = {};
 
     return {
 
       renderValue: function(x) {
 
-        // TODO: code to render the widget, e.g.
-        el.innerText = x.message;
-
+        var canvas = instance.canvas = document.createElement('canvas');
+        canvas.setAttribute('id', el.id + "-canvas-gitgraph");
+        el.appendChild(canvas);
+        
+        if(!x.config) x.config = {};
+        
+        x.config.elementId = canvas.id;
+        
+        var gitgraph = instance.gitgraph = new GitGraph( x.config );
+        
+        var data = instance.data = HTMLWidgets.dataframeToD3(x.githistory);
+        var branches = {};
+        
+        data.map(function(action){
+          // add branch if not already created
+          if(!branches[action.branch]) {
+            branches[action.branch] = gitgraph.branch({'name': action.branch});
+          }
+          
+          var branch = branches[action.branch];
+          
+          branch[action.type](action);
+        });
+        
       },
 
       resize: function(width, height) {
 
         // TODO: code to re-render the widget with a new size
 
-      }
+      },
+      
+      instance: instance
 
     };
   }

@@ -5,11 +5,17 @@
 #' @import htmlwidgets
 #'
 #' @export
-gitgraph <- function(message, width = NULL, height = NULL, elementId = NULL) {
+gitgraph <- function(
+  githistory = NULL,
+  config = NULL,
+  width = NULL, height = NULL,
+  elementId = NULL
+) {
 
   # forward options using x
   x = list(
-    message = message
+    githistory = githistory,
+    config = config
   )
 
   # create widget
@@ -18,7 +24,7 @@ gitgraph <- function(message, width = NULL, height = NULL, elementId = NULL) {
     x,
     width = width,
     height = height,
-    package = 'pkg',
+    package = 'gitgraphR',
     elementId = elementId
   )
 }
@@ -41,7 +47,7 @@ gitgraph <- function(message, width = NULL, height = NULL, elementId = NULL) {
 #'
 #' @export
 gitgraphOutput <- function(outputId, width = '100%', height = '400px'){
-  htmlwidgets::shinyWidgetOutput(outputId, 'gitgraph', width, height, package = 'pkg')
+  htmlwidgets::shinyWidgetOutput(outputId, 'gitgraph', width, height, package = 'gitgraphR')
 }
 
 #' @rdname gitgraph-shiny
