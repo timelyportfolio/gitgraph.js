@@ -22,6 +22,23 @@ git_history(n=10) %>%
   gitgraph()
 ```
 
+```
+## add some config options
+git_history(n=10) %>%
+  mutate(
+    branch = git_branch_current(),
+    type = "commit"
+  ) %>%
+  arrange(when) %>%
+  gitgraph(
+    config = list(
+      template="metro",
+      orientation="horizontal",
+      mode="compact"
+    )
+  )
+```
+
 
 <hr/>
 ## Original README.md

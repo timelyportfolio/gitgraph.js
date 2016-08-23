@@ -38,5 +38,21 @@ git_history(n=10) \%>\%
   ) \%>\%
   arrange(when) \%>\%
   gitgraph()
+
+
+## add some config options
+git_history(n=10) \%>\%
+  mutate(
+    branch = git_branch_current(),
+    type = "commit"
+  ) \%>\%
+  arrange(when) \%>\%
+  gitgraph(
+    config = list(
+      template="metro",
+      orientation="horizontal",
+      mode="compact"
+    )
+  )
 }
 
