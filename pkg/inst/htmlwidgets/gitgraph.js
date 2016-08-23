@@ -33,7 +33,11 @@ HTMLWidgets.widget({
           
           var branch = branches[action.branch];
           
-          branch[action.type](action);
+          // merge expects the branch object as an argument
+          //  while commit expects an object of details
+          var details = action.type === "merge" ? branch[action.details.branch] : action.details;
+          
+          branch[action.type](details);
         });
         
       },
