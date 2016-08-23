@@ -10,4 +10,5 @@ git_history(n=10) %>%
     branch = git_branch_current(),
     type = "commit"
   ) %>%
+  arrange(when) %>%
   gitgraph()

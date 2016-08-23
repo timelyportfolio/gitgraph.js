@@ -2,12 +2,41 @@
 % Please edit documentation in R/gitgraph.R
 \name{gitgraph}
 \alias{gitgraph}
-\title{<Add Title>}
+\title{Create a Graph of 'git' History with 'gitgraph.js'}
 \usage{
 gitgraph(githistory = NULL, config = NULL, width = NULL, height = NULL,
   elementId = NULL)
 }
+\arguments{
+\item{githistory}{\code{data.frame} from \code{githug::git_history()}
+supplemented with a branch name (named \code{branch})
+and type (named \code{type}) such as 'commit'}
+
+\item{config}{\code{list} of config options for gitgraph.js}
+
+\item{width, height}{a valid \code{CSS} size unit for the
+width and height of the htmlwidget container}
+
+\item{elementId}{a valid \code{CSS} element id for the
+htmlwidget container}
+}
 \description{
-<Add Description>
+Create a Graph of 'git' History with 'gitgraph.js'
+}
+\examples{
+# devtools::install_github("timelyportfolio/gitgraphR@R", subdir="pkg")
+# devtools::install_github("jennybc/githug")
+
+library(gitgraphR)
+library(githug)
+library(dplyr)
+
+git_history(n=10) \%>\%
+  mutate(
+    branch = git_branch_current(),
+    type = "commit"
+  ) \%>\%
+  arrange(when) \%>\%
+  gitgraph()
 }
 

@@ -1,6 +1,15 @@
-#' <Add Title>
+#' Create a Graph of 'git' History with 'gitgraph.js'
 #'
-#' <Add Description>
+#' @param githistory \code{data.frame} from \code{githug::git_history()}
+#'          supplemented with a branch name (named \code{branch})
+#'          and type (named \code{type}) such as 'commit'
+#' @param config \code{list} of config options for gitgraph.js
+#' @param width,height a valid \code{CSS} size unit for the
+#'          width and height of the htmlwidget container
+#' @param elementId a valid \code{CSS} element id for the
+#'          htmlwidget container
+#'          
+#' @example inst/examples/example_githug.R
 #'
 #' @import htmlwidgets
 #'
