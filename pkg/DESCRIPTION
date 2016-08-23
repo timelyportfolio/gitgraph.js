@@ -1,9 +1,27 @@
-Package: pkg
-Title: What the Package Does (one line, title case)
-Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
-Depends: R (>= 3.3.1)
+Package: gitgraphR
+Title: gitgraph.js for R
+Version: 0.1.0
+Date: 2016-08-23
+Authors@R: c(
+      person(
+        "Nicolas","Carlo"
+        , role = c("aut", "cph")
+        , comment = "gitgraph.js library in htmlwidgets/lib, http://gitgraphjs.com/"
+      ),
+      person(
+        "Fabien","Bernard"
+        , role = c("aut", "cph")
+        , comment = "gitgraph.js library in htmlwidgets/lib, http://gitgraphjs.com/"
+      ),
+      person(
+        "Kent", "Russell"
+        , role = c("aut", "cre")
+        , comment = "R interface"
+        , email = "kent.russell@timelyportfolio.com"
+      )
+    )
+Description: Graph git using gitgraph.js in R.
+Depends: R (>= 3.2.0)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

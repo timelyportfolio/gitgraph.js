@@ -1,3 +1,15 @@
+## To Use in R
+
+```
+devtools::install_github("timelyportolio/gitgraph.js@R", subdir="pkg")
+```
+
+### Example
+
+
+<hr/>
+## Original README.md
+
 ![gitgraph.js](/assets/logo/gitgraph-logo.png)
 
 [![Build Status](https://secure.travis-ci.org/nicoespeon/gitgraph.js.png)](http://travis-ci.org/nicoespeon/gitgraph.js) [![devDependency Status](https://david-dm.org/nicoespeon/gitgraph.js/dev-status.png)](https://david-dm.org/nicoespeon/gitgraph.js#info=devDependencies)
