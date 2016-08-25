@@ -1,4 +1,4 @@
-# devtools::install_github("timelyportfolio/gitgraphR@R", subdir="pkg")
+# devtools::install_github("timelyportfolio/gitgraphR")
 # devtools::install_github("jennybc/githug")
 
 library(gitgraphR)

@@ -24,7 +24,7 @@ htmlwidget container}
 Create a Graph of 'git' History with 'gitgraph.js'
 }
 \examples{
-# devtools::install_github("timelyportfolio/gitgraphR@R", subdir="pkg")
+# devtools::install_github("timelyportfolio/gitgraphR")
 # devtools::install_github("jennybc/githug")
 
 library(gitgraphR)
